@@ -1,3 +1,4 @@
+import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
@@ -5,9 +6,12 @@ import { sliderData } from "./sliderData";
 
 const HeroSlider = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+    },
+    [Autoplay()],
+  );
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -23,6 +27,7 @@ const HeroSlider = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
+    emblaApi.plugins().autoplay?.play();
 
     onSelect();
     emblaApi.on("select", onSelect);
