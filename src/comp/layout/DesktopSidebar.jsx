@@ -55,7 +55,7 @@ const DesktopSidebar = () => {
                 }
               `}
             >
-              {isCommunity && <GraduationCap size={14} />}
+              {isCommunity && <GraduationCap size={16} />}
 
               {item.title}
             </a>

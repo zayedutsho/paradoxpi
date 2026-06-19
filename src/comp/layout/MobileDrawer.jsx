@@ -29,8 +29,8 @@ const MobileDrawer = ({ open, setOpen }) => {
           left-0
           h-screen
           w-full
-          bg-[rgba(43,18,4,0.88)]
-          backdrop-blur-[2px]
+          bg-[rgba(43,18,4,0.65)]
+          backdrop-blur-[1px]
           z-[100]
           transition-transform
 
