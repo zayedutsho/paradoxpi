@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
 import { sliderData } from "./sliderData";
 
 const HeroSlider = () => {
@@ -11,7 +11,10 @@ const HeroSlider = () => {
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((index) => emblaApi?.scrollTo(index), [emblaApi]);
+  const scrollTo = useCallback(
+    (index) => emblaApi?.scrollTo(index),
+    [emblaApi],
+  );
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -71,15 +74,15 @@ const HeroSlider = () => {
         onClick={scrollPrev}
         className="
           absolute
-          left-5
+          left-0
           top-1/2
           hidden
-          h-9
-          w-9
+          h-full
+          w-10
           -translate-y-1/2
           items-center
           justify-center
-          bg-black/20
+          bg-black/60
           text-white
           transition-colors
           hover:bg-black/35
@@ -95,11 +98,11 @@ const HeroSlider = () => {
         onClick={scrollNext}
         className="
           absolute
-          right-5
+          right-0
           top-1/2
           hidden
-          h-9
-          w-9
+          h-full
+          w-10
           -translate-y-1/2
           items-center
           justify-center
