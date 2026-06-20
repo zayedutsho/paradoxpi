@@ -17,12 +17,15 @@ function App() {
 
       <MobileDrawer open={open} setOpen={setOpen} />
 
-      <main className="lg:ml-[270px]">
-        {/* Hero Section Next */}
-
+      <main
+        className="
+          lg:ml-[240px]
+          2xl:ml-[270px]
+        "
+      >
         <Hero />
 
-        <About className="" />
+        <About />
       </main>
     </>
   );

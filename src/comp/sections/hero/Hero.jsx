@@ -9,8 +9,10 @@ const Hero = () => {
         flex
         flex-col
         lg:flex-row
-        lg:min-h-[560px]
         bg-[#F6E5C9]
+
+        lg:min-h-[560px]
+        xl:min-h-[560px]
       "
     >
       <HeroContent />

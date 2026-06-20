@@ -20,116 +20,124 @@ const About = () => {
           grid
           w-full
           items-center
-          gap-0
           lg:min-h-[485px]
           lg:grid-cols-[39%_61%]
         "
       >
-        {/* ================= LEFT SIDE ================= */}
-        <div className="relative min-h-[255px] sm:min-h-[305px] lg:min-h-[485px]">
-          {/* ================= MOBILE DESIGN ================= */}
-          <div className="flex flex-col items-center px-4 pt-8 lg:hidden">
-            <div className="relative flex items-center justify-center">
-              <img
-                src={circle}
-                alt=""
-                aria-hidden="true"
-                className="h-[260px] w-[260px] opacity-75"
-              />
+        {/* ================= MOBILE ================= */}
+        {/* ================= MOBILE DESIGN ================= */}
+        <div className="lg:hidden relative overflow-hidden min-h-[300px]">
+          {/* Circle */}
+          <img
+            src={circle}
+            alt=""
+            aria-hidden="true"
+            className="
+      absolute
+      top-[-30px]
+      left-1/2
+      -translate-x-1/2
+      w-[450px]
+      h-[450px]
+      opacity-75
+    "
+          />
 
-              <img
-                src={aboutLogo}
-                alt="ParadoxPi"
-                className="absolute left-[-10px] top-[80px] h-[50px] w-[50px]"
-              />
-            </div>
+          <div className="relative z-10 px-4 pt-[120px]">
+            {/* Logo */}
+            <img
+              src={aboutLogo}
+              alt="ParadoxPi"
+              className="h-[42px] w-[42px]"
+            />
 
-            <div className="mt-4 w-full max-w-[320px]">
-              <div className="mb-3 h-px w-[90px] bg-[#2B1204]" />
+            {/* Line */}
+            <div className="mt-2 h-px w-[70px] bg-[#2B1204]" />
 
-              <h2
-                className="
-                  text-center
-                  text-[24px]
-                  font-semibold
-                  leading-[0.9]
-                  text-[#2B1204]
-                "
-              >
-                Established with
-                <br />
-                students in mind.
-              </h2>
-            </div>
+            {/* Title */}
+            <h2
+              className="
+        mt-3
+        max-w-[230px]
+        text-[24px]
+        font-semibold
+        leading-[0.9]
+        text-[#2B1204]
+      "
+            >
+              Established with
+              <br />
+              students in mind.
+            </h2>
           </div>
+        </div>
 
-          {/* ================= DESKTOP (UNCHANGED) ================= */}
+        {/* ================= DESKTOP (UNCHANGED) ================= */}
+        <div
+          className="
+            hidden
+            lg:flex
+            relative
+            min-h-[485px]
+            items-center
+            justify-center
+          "
+        >
+          <img
+            src={circle}
+            alt=""
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute
+              h-[410px]
+              w-[410px]
+              opacity-75
+            "
+          />
+
           <div
             className="
-              hidden
-              lg:flex
               relative
-              h-full
+              z-10
+              flex
               items-center
-              justify-center
+              gap-6
+              px-4
+              ml-[110px]
             "
           >
             <img
-              src={circle}
-              alt=""
-              aria-hidden="true"
+              src={aboutLogo}
+              alt="ParadoxPi"
               className="
-                pointer-events-none
-                absolute
-                h-[410px]
-                w-[410px]
-                opacity-75
+                h-[72px]
+                w-[72px]
+                object-contain
               "
             />
 
-            <div
+            <span
+              aria-hidden="true"
               className="
-                relative
-                z-10
-                flex
-                items-center
-                gap-6
-                px-4
-                ml-[110px]
+                h-[72px]
+                w-px
+                bg-[#2B1204]
+              "
+            />
+
+            <h2
+              className="
+                text-[40px]
+                font-semibold
+                leading-[0.9]
+                text-[#2B1204]
               "
             >
-              <img
-                src={aboutLogo}
-                alt="ParadoxPi"
-                className="
-                  h-[72px]
-                  w-[72px]
-                  object-contain
-                "
-              />
-
-              <span
-                aria-hidden="true"
-                className="
-                  h-[72px]
-                  w-px
-                  bg-[#2B1204]
-                "
-              />
-
-              <h2
-                className="
-                  text-[40px]
-                  font-semibold
-                  leading-[0.9]
-                  text-[#2B1204]
-                "
-              >
-                Established with
-                <br />
-                students in mind.
-              </h2>
-            </div>
+              Established with
+              <br />
+              students in mind.
+            </h2>
           </div>
         </div>
 
@@ -139,11 +147,12 @@ const About = () => {
             relative
             z-10
             px-5
-            pb-1
+            pt-4
             text-[#684426]
 
             lg:max-w-[760px]
             lg:px-0
+            lg:pt-0
           "
         >
           <h3
@@ -153,9 +162,7 @@ const About = () => {
               font-semibold
               leading-tight
               text-[#2B1204]
-
-              lg:mb-3
-              lg:text-[24px]
+              
             "
           >
             About Us

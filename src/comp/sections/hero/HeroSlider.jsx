@@ -6,6 +6,7 @@ import { sliderData } from "./sliderData";
 
 const HeroSlider = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
@@ -15,6 +16,7 @@ const HeroSlider = () => {
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
   const scrollTo = useCallback(
     (index) => emblaApi?.scrollTo(index),
     [emblaApi],
@@ -27,6 +29,7 @@ const HeroSlider = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
+
     emblaApi.plugins().autoplay?.play();
 
     emblaApi.on("select", onSelect);
@@ -43,7 +46,10 @@ const HeroSlider = () => {
       className="
         relative
         w-full
+
         lg:w-[61%]
+        xl:w-[61%]
+
         overflow-hidden
       "
     >
@@ -62,8 +68,11 @@ const HeroSlider = () => {
                 className="
                   w-full
                   h-[260px]
+
                   sm:h-[420px]
+
                   lg:h-[560px]
+
                   object-cover
                 "
               />
@@ -72,6 +81,7 @@ const HeroSlider = () => {
         </div>
       </div>
 
+      {/* Previous */}
       <button
         type="button"
         aria-label="Previous slide"
@@ -82,20 +92,24 @@ const HeroSlider = () => {
           top-1/2
           hidden
           h-full
-          w-10
+
+          lg:flex
+          lg:w-8
+          xl:w-10
+
           -translate-y-1/2
           items-center
           justify-center
-          bg-black/60
+          bg-black/20
           text-white
           transition-colors
           hover:bg-black/35
-          lg:flex
         "
       >
         <ChevronLeft size={24} strokeWidth={1.8} />
       </button>
 
+      {/* Next */}
       <button
         type="button"
         aria-label="Next slide"
@@ -106,7 +120,11 @@ const HeroSlider = () => {
           top-1/2
           hidden
           h-full
-          w-10
+
+          lg:flex
+          lg:w-8
+          xl:w-10
+
           -translate-y-1/2
           items-center
           justify-center
@@ -114,16 +132,18 @@ const HeroSlider = () => {
           text-white
           transition-colors
           hover:bg-black/35
-          lg:flex
         "
       >
         <ChevronRight size={24} strokeWidth={1.8} />
       </button>
 
+      {/* Dots */}
       <div
         className="
           absolute
-          bottom-8
+          bottom-6
+          lg:bottom-8
+
           left-1/2
           flex
           -translate-x-1/2
