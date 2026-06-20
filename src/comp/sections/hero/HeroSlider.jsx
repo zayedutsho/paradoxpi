@@ -29,7 +29,6 @@ const HeroSlider = () => {
     if (!emblaApi) return;
     emblaApi.plugins().autoplay?.play();
 
-    onSelect();
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
 
