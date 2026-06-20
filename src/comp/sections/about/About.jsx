@@ -43,7 +43,7 @@ const About = () => {
     "
           />
 
-          <div className="relative z-10 px-4 pt-[120px]">
+          <div className="relative z-10 px-4 pt-[130px]">
             {/* Logo */}
             <img
               src={aboutLogo}
@@ -58,8 +58,8 @@ const About = () => {
             <h2
               className="
         mt-3
-        max-w-[230px]
-        text-[24px]
+        max-w-full
+        text-[32px]
         font-semibold
         leading-[0.9]
         text-[#2B1204]
@@ -69,6 +69,35 @@ const About = () => {
               <br />
               students in mind.
             </h2>
+
+            {/* About Us Content - Mobile Only */}
+            <div className="mt-[50px] text-[#684426] lg:hidden">
+              <h3
+                className="
+          mb-3
+          text-[24px]
+          font-semibold
+          leading-tight
+          text-[#2B1204]
+        "
+              >
+                About Us
+              </h3>
+
+              <p className="text-[18px] leading-[1.35]">
+                We started in December 2024. ParadoxPi Academy was built with a
+                clear purpose; to redefine how students experience their
+                day-to-day education. We offer the most authentic and fun
+                experience for students so that learning doesn't become a
+                monotonous thing.
+              </p>
+
+              <p className="mt-5 text-[18px] leading-[1.35]">
+                Our approach is research-based, structured, and thoughtfully
+                designed to ready your children for their upcoming career and
+                future endeavors.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -153,6 +182,8 @@ const About = () => {
             lg:max-w-[760px]
             lg:px-0
             lg:pt-0
+              hidden
+    lg:block
           "
         >
           <h3
